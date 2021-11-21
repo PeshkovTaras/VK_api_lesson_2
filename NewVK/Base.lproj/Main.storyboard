@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NewVK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nmi-qb-epW">
+                                <rect key="frame" x="0.0" y="44" width="414" height="711"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lj-Nr-8bD">
+                                <rect key="frame" x="149" y="800" width="116" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="nzR-77-Lzo"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Go to Request"/>
+                                <connections>
+                                    <segue destination="S63-8d-uuM" kind="show" id="1KP-d2-isZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Nmi-qb-epW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="61I-DC-U32"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Nmi-qb-epW" secondAttribute="bottom" constant="107" id="Bdw-wg-2wq"/>
+                            <constraint firstItem="8lj-Nr-8bD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Co1-sN-71i"/>
+                            <constraint firstItem="Nmi-qb-epW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gAD-qy-RJc"/>
+                            <constraint firstItem="Nmi-qb-epW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vMZ-y1-IWh"/>
+                            <constraint firstItem="8lj-Nr-8bD" firstAttribute="top" secondItem="Nmi-qb-epW" secondAttribute="bottom" constant="45" id="xSq-bf-jGE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="goToRequestButton" destination="8lj-Nr-8bD" id="9i3-Ne-MWt"/>
+                        <outlet property="webView" destination="Nmi-qb-epW" id="wzo-Eg-3hT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="69.565217391304358" y="81.696428571428569"/>
+        </scene>
+        <!--SecondVC-->
+        <scene sceneID="ktA-mb-gwD">
+            <objects>
+                <viewController id="S63-8d-uuM" customClass="SecondVC" customModule="NewVK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9mP-Rk-Ycd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="result" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="d8M-w9-IJF">
+                                <rect key="frame" x="20" y="175" width="374" height="633"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="91" translatesAutoresizingMaskIntoConstraints="NO" id="Y31-ql-X6a">
+                                <rect key="frame" x="58" y="110" width="298.5" height="34"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pd-gJ-Jb7">
+                                        <rect key="frame" x="0.0" y="0.0" width="102.5" height="34"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Find Groups"/>
+                                        <connections>
+                                            <action selector="findGroupsButtonTapped:" destination="S63-8d-uuM" eventType="touchUpInside" id="6Nb-5k-gX4"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input Group" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Hx-sC-aT1">
+                                        <rect key="frame" x="193.5" y="0.0" width="105" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ETc-V4-TFW">
+                                <rect key="frame" x="33.5" y="36" width="347" height="31"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfc-SG-Yad">
+                                        <rect key="frame" x="0.0" y="0.0" width="99" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Get Friends"/>
+                                        <connections>
+                                            <action selector="getFriendsButtonTapped:" destination="S63-8d-uuM" eventType="touchUpInside" id="ThX-Km-JBW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AkJ-B4-XMZ">
+                                        <rect key="frame" x="124" y="0.0" width="99" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Get Fotos"/>
+                                        <connections>
+                                            <action selector="getFotosButtonTapped:" destination="S63-8d-uuM" eventType="touchUpInside" id="F8H-rn-Pnb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aM4-I3-ihg">
+                                        <rect key="frame" x="248" y="0.0" width="99" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Get Groups"/>
+                                        <connections>
+                                            <action selector="getGroupsButtonTapped:" destination="S63-8d-uuM" eventType="touchUpInside" id="Dud-Fx-wRK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Rpn-cu-2Zt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ETc-V4-TFW" firstAttribute="centerX" secondItem="Rpn-cu-2Zt" secondAttribute="centerX" id="3Dm-Ff-oHC"/>
+                            <constraint firstItem="d8M-w9-IJF" firstAttribute="top" secondItem="Y31-ql-X6a" secondAttribute="bottom" constant="31" id="9mo-qx-IEe"/>
+                            <constraint firstItem="Rpn-cu-2Zt" firstAttribute="bottom" secondItem="d8M-w9-IJF" secondAttribute="bottom" id="GEk-1m-gcy"/>
+                            <constraint firstItem="d8M-w9-IJF" firstAttribute="leading" secondItem="Rpn-cu-2Zt" secondAttribute="leading" constant="20" id="GzE-2s-Bws"/>
+                            <constraint firstItem="d8M-w9-IJF" firstAttribute="centerX" secondItem="Rpn-cu-2Zt" secondAttribute="centerX" id="bBQ-Yo-IFt"/>
+                            <constraint firstItem="AkJ-B4-XMZ" firstAttribute="centerX" secondItem="Rpn-cu-2Zt" secondAttribute="centerX" id="jb4-AY-eCL"/>
+                            <constraint firstItem="0pd-gJ-Jb7" firstAttribute="top" secondItem="AkJ-B4-XMZ" secondAttribute="bottom" constant="43" id="lAC-ob-bip"/>
+                            <constraint firstItem="AkJ-B4-XMZ" firstAttribute="top" secondItem="Rpn-cu-2Zt" secondAttribute="top" constant="36" id="mOn-Gk-v8n"/>
+                            <constraint firstItem="Y31-ql-X6a" firstAttribute="centerX" secondItem="Rpn-cu-2Zt" secondAttribute="centerX" id="rQz-eY-hej"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Eqs-Ut-Ppk"/>
+                    <connections>
+                        <outlet property="inputGroupTextField" destination="6Hx-sC-aT1" id="xP4-h4-Zfb"/>
+                        <outlet property="textView" destination="d8M-w9-IJF" id="yf1-Qn-Ky3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hGA-v1-3pQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="863.768115942029" y="89.732142857142847"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
